@@ -1,0 +1,25 @@
+POST https://localhost:7039/security/createToken HTTP/1.1
+
+###
+
+POST https://localhost:7039/api/multipart_uploads HTTP/1.1
+content-type: application/json
+
+{
+  "name":"walk dog",
+  "isComplete":true
+}
+
+###
+POST https://localhost:7039/api/uploads/1/chunks HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="Data"
+
+sdfsdfsdfsdfsd sdlfjsdlkfjslkdflsdfj
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+###
+POST https://localhost:7039/api/MultipartUploads/do HTTP/1.1
